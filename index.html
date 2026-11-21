@@ -197,9 +197,6 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
 
 
 
-  <section class="rv">
-    <div class="blog" id="blog"></div>
-  </section>
 
   <nav class="soc rv" aria-label="Sosyal medya">
     <a href="https://www.instagram.com/loagenturkiye" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6"/></svg></a>
@@ -275,7 +272,7 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
       a.innerHTML=(v.kapak?'<img loading="lazy" alt="" src="'+v.kapak+'">':'')+'<span class="pf"></span><span class="pl">&#9654;</span><div class="vt"></div>';
       a.querySelector('.pf').innerHTML=IC[v.platform]||'';a.setAttribute('aria-label',v.baslik);if(v.kapak){a.querySelector('.vt').remove()}else{a.querySelector('.vt').textContent=v.baslik}s.appendChild(a)});
     var bl=document.getElementById('blog');
-    (d.blog||[]).forEach(function(p){
+    if(bl)(d.blog||[]).forEach(function(p){
       var a=document.createElement('a');a.className='bc t3';
       a.href=p.url+(p.url.indexOf('?')<0?'?utm_source=link&utm_medium=bio&utm_campaign=blog':'');
       a.innerHTML=(p.gorsel?'<img alt="" src="'+p.gorsel+'">':'')+'<div><b></b><span></span></div><i>&rarr;</i>';
