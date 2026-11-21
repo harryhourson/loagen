@@ -67,7 +67,7 @@ section{padding-top:34px}
 .vt{position:absolute;z-index:2;left:12px;right:12px;bottom:12px;font-size:14px;font-weight:700;line-height:1.25}
 .pod{display:block;position:relative;padding:18px;border-radius:26px;text-decoration:none;color:inherit;border:1px solid rgba(244,236,163,.3);box-shadow:0 26px 50px rgba(0,0,0,.45),0 0 70px rgba(29,185,84,.14)}
 .pod:hover{border-color:#1DB954}
-.pbg{position:absolute;inset:0;border-radius:26px;overflow:hidden;z-index:0;background:#14284a}
+.pbg{position:absolute;inset:0;border-radius:26px;overflow:hidden;z-index:0;background:#14284a;clip-path:inset(0 round 26px);isolation:isolate;contain:paint}
 .pbg:before{content:"";position:absolute;inset:-35%;background:var(--cv) center/cover;filter:blur(36px) saturate(1.35);opacity:.6}
 .pbg:after{content:"";position:absolute;inset:0;background:linear-gradient(150deg,rgba(27,51,88,.3),rgba(12,25,48,.86))}
 .pbody{position:relative;display:flex;gap:16px;align-items:center}
@@ -107,10 +107,7 @@ section{padding-top:34px}
 .shopsw .thumb{position:absolute;top:4px;bottom:4px;left:0;width:var(--tw,50%);transform:translateX(var(--tx,4px));border-radius:22px;background:var(--cream);box-shadow:0 6px 16px rgba(0,0,0,.3);transition:transform .55s var(--ease),width .55s var(--ease)}
 .ssb{position:relative;z-index:1;display:flex;align-items:center;gap:7px;padding:9px 18px;border:0;background:none;color:var(--ink);font-size:12.5px;font-weight:600;letter-spacing:.01em;border-radius:22px;cursor:pointer;transition:color .4s}
 .ssb.on{color:var(--navy)}
-.tyd{width:7px;height:7px;border-radius:50%;background:#F27A1A;box-shadow:0 0 0 0 rgba(242,122,26,.6)}
-.ssb.on .tyd{animation:typing 2s infinite}
-@keyframes typing{70%{box-shadow:0 0 0 7px rgba(242,122,26,0)}100%{box-shadow:0 0 0 0 rgba(242,122,26,0)}}
-.prod.sw .pc{animation:bump .6s var(--ease)}
+.ssb.on .prod.sw .pc{animation:bump .6s var(--ease)}
 @keyframes bump{40%{scale:1.06}}
 .deck{display:grid;padding:28px 24px 0 0;perspective:1200px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .deck .pod{grid-area:1/1;--o:1;z-index:calc(3 - var(--o)*2);cursor:grab;touch-action:pan-y;transform:perspective(1000px) translate3d(calc(var(--o)*24px + var(--dx,0px)),calc(var(--o)*-26px),0px) rotateX(calc(var(--hy,0deg) + var(--sx,0deg))) rotateY(calc(var(--hx,0deg) + var(--dr,0deg))) scale(calc(1 - var(--o)*.05));filter:brightness(calc(1 - var(--o)*.3)) saturate(calc(1 - var(--o)*.15));transition:transform .65s var(--ease),filter .65s var(--ease),box-shadow .65s,border-color .3s}
@@ -177,7 +174,7 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
       <a class="prod" data-site="https://www.loagen.com.tr/products/folinativ-folik-asit?utm_source=link&utm_medium=bio&utm_campaign=folinativ" data-ty="https://ty.gl/0g663m89gvj3a" href="https://www.loagen.com.tr/products/folinativ-folik-asit?utm_source=link&utm_medium=bio&utm_campaign=folinativ"><div class="pc" style="--m:url(img/folinativ-kesim.png)"><img src="img/folinativ-kesim.png" alt="Folinativ™"></div><div class="lb"><b>Folinativ<sup>™</sup></b><span>Folik asit</span></div></a>
     </div>
   
-    <div class="shopsw" id="shopsw" role="group" aria-label="Nereden almak istersin"><span class="thumb"></span><button type="button" class="ssb on" data-s="site">loagen.com.tr</button><button type="button" class="ssb" data-s="ty"><i class="tyd"></i>Trendyol</button></div>
+    <div class="shopsw" id="shopsw" role="group" aria-label="Nereden almak istersin"><span class="thumb"></span><button type="button" class="ssb on" data-s="site">loagen.com.tr</button><button type="button" class="ssb" data-s="ty">Trendyol</button></div>
   </section>
   <section class="rv pds">
     <div class="deck" id="deck">
