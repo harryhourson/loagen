@@ -1,10 +1,24 @@
 {
   "videolar": [
-    {"baslik": "Anneannenin karnındaydın", "platform": "YT", "url": "https://www.youtube.com/@loagenturkiye", "kapak": "img/yumurta.jpg"},
-    {"baslik": "Bebekler neden yürüyünce susar", "platform": "IG", "url": "https://www.instagram.com/loagenturkiye", "kapak": "img/yuru.jpg"},
-    {"baslik": "Yeni video yakında", "platform": "TT", "url": "https://www.tiktok.com/@loagenturkiye", "kapak": ""}
+    {
+      "baslik": "Anneannenin karnındaydın",
+      "platform": "YT",
+      "url": "https://www.youtube.com/@loagenturkiye",
+      "kapak": "img/yumurta.jpg"
+    },
+    {
+      "baslik": "Bebekler neden yürüyünce susar",
+      "platform": "IG",
+      "url": "https://www.instagram.com/loagenturkiye",
+      "kapak": "img/yuru.jpg"
+    }
   ],
   "blog": [
-    {"baslik": "Blogdaki son yazılar", "ozet": "Rehberler ve okumalar", "url": "https://www.loagen.com.tr/blogs/haberler"}
+    {
+      "baslik": "Blogdaki son yazılar",
+      "ozet": "Rehberler ve okumalar",
+      "url": "https://www.loagen.com.tr/blogs/haberler",
+      "gorsel": "img/blog.jpg"
+    }
   ]
 }
