@@ -99,7 +99,24 @@ section{padding-top:34px}
 .bc b{display:block;font-size:15px}.bc span{font-size:12.5px;color:rgba(247,243,214,.68)}
 .bc i{margin-left:auto;font-style:normal;opacity:.6}
 .ps{container-type:inline-size}
-.pds{padding-top:56px}
+.pds{padding-top:28px}
+.deck{display:grid;padding:28px 24px 0 0;perspective:1200px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.deck .pod{grid-area:1/1;--o:1;z-index:calc(3 - var(--o)*2);cursor:grab;touch-action:pan-y;transform:perspective(1000px) translate3d(calc(var(--o)*24px + var(--dx,0px)),calc(var(--o)*-26px),0px) rotateX(calc(var(--hy,0deg) + var(--sx,0deg))) rotateY(calc(var(--hx,0deg) + var(--dr,0deg))) scale(calc(1 - var(--o)*.05));filter:brightness(calc(1 - var(--o)*.3)) saturate(calc(1 - var(--o)*.15));transition:transform .65s var(--ease),filter .65s var(--ease),box-shadow .65s,border-color .3s}
+.deck .pod[data-s="0"]{--o:0}
+.deck .pod[data-s="1"]{cursor:pointer;box-shadow:0 12px 26px rgba(0,0,0,.4)}
+.deck .pod.dragging{transition:filter .65s var(--ease),box-shadow .65s;cursor:grabbing}
+.deck .pod.ap{box-shadow:0 26px 50px rgba(0,0,0,.45),0 0 70px rgba(186,90,240,.2)}
+.deck .pod.ap:hover{border-color:#c46cf5}
+.deck .pod.ap .pt small:before{background:#c46cf5;animation-name:ping2}
+@keyframes ping2{70%{box-shadow:0 0 0 8px rgba(196,108,245,0)}100%{box-shadow:0 0 0 0 rgba(196,108,245,0)}}
+.deck .pod.ap .eq i{background:#c46cf5}
+.deck .pod.ap .pbg:after{background:linear-gradient(150deg,rgba(60,30,110,.4),rgba(18,10,40,.88))}
+.deck .pod.ap .sp2{background:linear-gradient(135deg,#df86ff,#9a3fe0);color:#1c0833;box-shadow:0 10px 24px rgba(154,63,224,.38)}
+.deck .pod.ap .sp2 em{background:#2a0f45;color:#e6b0ff}
+.dsw{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.dsb{display:inline-flex;align-items:center;gap:7px;padding:6px 14px 6px 7px;border-radius:22px;border:1px solid rgba(172,177,135,.4);background:rgba(244,236,163,.06);color:var(--ink);font:600 12px Montserrat,system-ui,sans-serif;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.dsb svg{width:20px;height:20px;display:block}
+.dsb.on{background:var(--cream);color:var(--navy);border-color:var(--cream)}
 .prods{position:relative;height:calc(53cqw + 67px);margin-top:30px;perspective:1100px}
 .prods:before{content:"";position:absolute;inset:-30px -20px;background:radial-gradient(55% 55% at 50% 50%,rgba(244,236,163,.2),transparent 72%);pointer-events:none;animation:halo 6s ease-in-out infinite}
 @keyframes halo{50%{opacity:.6;scale:1.06}}
@@ -149,14 +166,28 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
     </div>
   </section>
   <section class="rv pds">
-    <a class="pod t3" href="https://open.spotify.com/search/Loagen" aria-label="Loagen Podcast, Spotify'da dinle" style="--cv:url(img/podcast.jpg)">
-      <div class="pbg"></div>
-      <div class="pbody">
-        <div class="art"><div class="disc"><span></span></div><div class="cov"><img src="img/podcast.jpg" alt="Loagen, Bir düşünce arşivi"></div></div>
-        <div class="pt"><small>PODCAST</small><b>Loagen</b><span>Bilim, felsefe ve insan üstüne.</span><div class="eq" aria-hidden="true"></div></div>
-      </div>
-      <div class="sp2"><span class="l"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#08140c"/><g fill="none" stroke="#1DB954" stroke-linecap="round"><path d="M5.8 9.3C9.9 8 14.6 8.3 18.4 10.5" stroke-width="2"/><path d="M6.5 12.6C9.6 11.7 13.3 12 16.4 13.7" stroke-width="1.7"/><path d="M7.3 15.7C9.8 15 12.7 15.2 15.1 16.5" stroke-width="1.4"/></g></svg>Spotify'da dinle</span><em>&#9654;</em></div>
-    </a>
+    <div class="deck" id="deck">
+      <a class="pod t3 dk spo" data-s="0" href="https://open.spotify.com/search/Loagen" aria-label="Loagen Podcast, Spotify'da dinle" style="--cv:url(img/podcast.jpg)">
+        <div class="pbg"></div>
+        <div class="pbody">
+          <div class="art"><div class="disc"><span></span></div><div class="cov"><img src="img/podcast.jpg" alt="Loagen, Bir düşünce arşivi"></div></div>
+          <div class="pt"><small>PODCAST</small><b>Loagen</b><span>Bilim, felsefe ve insan üstüne.</span><div class="eq" aria-hidden="true"></div></div>
+        </div>
+        <div class="sp2"><span class="l"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#08140c"/><g fill="none" stroke="#1DB954" stroke-linecap="round"><path d="M5.8 9.3C9.9 8 14.6 8.3 18.4 10.5" stroke-width="2"/><path d="M6.5 12.6C9.6 11.7 13.3 12 16.4 13.7" stroke-width="1.7"/><path d="M7.3 15.7C9.8 15 12.7 15.2 15.1 16.5" stroke-width="1.4"/></g></svg>Spotify'da dinle</span><em>&#9654;</em></div>
+      </a>
+      <a class="pod t3 dk ap" data-s="1" href="https://podcasts.apple.com/search?term=Loagen" aria-label="Loagen Podcast, Apple Podcasts'te dinle" style="--cv:url(img/podcast.jpg)">
+        <div class="pbg"></div>
+        <div class="pbody">
+          <div class="art"><div class="disc"><span></span></div><div class="cov"><img src="img/podcast.jpg" alt="Loagen, Bir düşünce arşivi"></div></div>
+          <div class="pt"><small>PODCAST</small><b>Loagen</b><span>Bilim, felsefe ve insan üstüne.</span><div class="eq" aria-hidden="true"></div></div>
+        </div>
+        <div class="sp2"><span class="l"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2a0f45"/><g fill="none" stroke="#ecc2ff" stroke-linecap="round" stroke-width="1.6"><path d="M7.2 14.4a5.7 5.7 0 1 1 9.6 0"/><path d="M9.5 12.7a3 3 0 1 1 5 0"/></g><circle cx="12" cy="10.3" r="1.5" fill="#ecc2ff"/><path d="M12 12.7c1.2 0 1.6.8 1.5 2l-.4 3.1a1.1 1.1 0 0 1-2.2 0l-.4-3.1c-.1-1.2.3-2 1.5-2Z" fill="#ecc2ff"/></svg>Apple Podcasts'te dinle</span><em>&#9654;</em></div>
+      </a>
+    </div>
+    <div class="dsw" role="tablist" aria-label="Podcast platformu">
+      <button class="dsb on" data-i="0" role="tab" aria-selected="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#08140c"/><g fill="none" stroke="#1DB954" stroke-linecap="round"><path d="M5.8 9.3C9.9 8 14.6 8.3 18.4 10.5" stroke-width="2"/><path d="M6.5 12.6C9.6 11.7 13.3 12 16.4 13.7" stroke-width="1.7"/><path d="M7.3 15.7C9.8 15 12.7 15.2 15.1 16.5" stroke-width="1.4"/></g></svg>Spotify</button>
+      <button class="dsb" data-i="1" role="tab" aria-selected="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2a0f45"/><g fill="none" stroke="#ecc2ff" stroke-linecap="round" stroke-width="1.6"><path d="M7.2 14.4a5.7 5.7 0 1 1 9.6 0"/><path d="M9.5 12.7a3 3 0 1 1 5 0"/></g><circle cx="12" cy="10.3" r="1.5" fill="#ecc2ff"/><path d="M12 12.7c1.2 0 1.6.8 1.5 2l-.4 3.1a1.1 1.1 0 0 1-2.2 0l-.4-3.1c-.1-1.2.3-2 1.5-2Z" fill="#ecc2ff"/></svg>Apple Podcasts</button>
+    </div>
   </section>
 
 
@@ -193,14 +224,24 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
     } else Array.from(node.childNodes).forEach(wrap);
   })(tg);
 
-  var wv=document.querySelector('.eq')||document.createElement('i');
-  for(var i=0;i<22;i++){var e=document.createElement('i');e.style.animationDelay=(i*0.08)+'s';wv.appendChild(e)}
+  document.querySelectorAll('.eq').forEach(function(wv,k){for(var i=0;i<22;i++){var e=document.createElement('i');e.style.animationDelay=((i+k*7)*0.08)+'s';wv.appendChild(e)}});
 
   function tilt3(el){if(el._t)return;el._t=1;
     el.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse'||RM)return;var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.setProperty('--hx',(x*10).toFixed(1)+'deg');el.style.setProperty('--hy',(-y*8).toFixed(1)+'deg')});
     el.addEventListener('pointerleave',function(){el.style.setProperty('--hx','0deg');el.style.setProperty('--hy','0deg')})}
   var t3k=0;function t3s(){t3k=0;document.querySelectorAll('.t3').forEach(function(el){var r=el.getBoundingClientRect(),o=(r.top+r.height/2)/innerHeight-.5;el.style.setProperty('--sx',(o*-7).toFixed(1)+'deg')})}
   if(!RM){addEventListener('scroll',function(){if(!t3k)t3k=requestAnimationFrame(t3s)},{passive:true});document.querySelectorAll('.t3').forEach(tilt3);t3s()}
+  var dk=document.getElementById('deck'),dp=Array.prototype.slice.call(dk.querySelectorAll('.pod')),dsb=document.querySelectorAll('.dsb'),cur=0,dmv=0,dstart=0,dpod=null,nudged=0;
+  function dset(n){cur=n;dp.forEach(function(p,i){p.dataset.s=i===cur?'0':'1'});dsb.forEach(function(b,i){b.classList.toggle('on',i===cur);b.setAttribute('aria-selected',i===cur)})}
+  dsb.forEach(function(b){b.addEventListener('click',function(){nudged=1;dset(+b.dataset.i)})});
+  dp.forEach(function(p){p.addEventListener('pointerdown',function(e){if(p.dataset.s!=='0')return;dpod=p;dmv=0;dstart=e.clientX;p.classList.add('dragging')})});
+  addEventListener('pointermove',function(e){if(!dpod)return;var dx=e.clientX-dstart;dmv=Math.max(dmv,Math.abs(dx));dpod.style.setProperty('--dx',dx+'px');dpod.style.setProperty('--dr',Math.max(-14,Math.min(14,dx/12))+'deg')});
+  function dend(){if(!dpod)return;var p=dpod,dx=parseFloat(p.style.getPropertyValue('--dx'))||0;dpod=null;p.classList.remove('dragging');p.style.setProperty('--dx','0px');p.style.setProperty('--dr','0deg');if(Math.abs(dx)>55){nudged=1;dset(1-cur)}}
+  addEventListener('pointerup',dend);addEventListener('pointercancel',dend);
+  dk.addEventListener('click',function(e){var p=e.target.closest('.pod');if(!p)return;if(dmv>6){e.preventDefault();dmv=0;return}if(p.dataset.s==='1'){e.preventDefault();nudged=1;dset(dp.indexOf(p))}},true);
+  dk.addEventListener('dragstart',function(e){e.preventDefault()});
+  dk.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){dset(1-cur)}});
+  if(!RM){var dio=new IntersectionObserver(function(es){if(es[0].isIntersecting){dio.disconnect();setTimeout(function(){if(nudged||dpod)return;var f=dp[cur];f.style.setProperty('--dx','-30px');f.style.setProperty('--dr','-6deg');setTimeout(function(){f.style.setProperty('--dx','0px');f.style.setProperty('--dr','0deg')},750)},2200)}},{threshold:.7});dio.observe(dk)}
   var IC={YT:'<svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5v5l4.2-2.5-4.2-2.5Z"/></svg>',IG:'<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6"/></svg>',TT:'<svg viewBox="0 0 24 24"><path d="M14 4v11a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 4c.4 2.4 2 3.9 4.5 4"/></svg>'};
   var sp=document.getElementById('strip'),dg=false,sx=0,sl=0,mv=0;
   sp.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;dg=true;mv=0;sx=e.clientX;sl=sp.scrollLeft;sp.classList.add('drag')});
