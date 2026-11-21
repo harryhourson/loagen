@@ -128,19 +128,22 @@ section{padding-top:34px}
 .mf .art{margin-right:0;width:108px;height:108px;flex:none}
 .mf .cov{width:108px;height:108px}
 .mf .disc{display:none}
-.mf .left{display:flex;flex-direction:column;gap:14px;transform:translateZ(46px);flex:none}
+.mf .left{display:flex;flex-direction:column;justify-content:center;align-self:center;transform:translateZ(46px);flex:none}
 .mf .mini{display:flex;gap:8px}
 .mf .mini a{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.3);border:1px solid rgba(244,236,163,.25);transition:border-color .3s,transform .3s var(--ease)}
 .mf .mini a:hover{border-color:var(--cream);transform:translateY(-2px)}
 .mf .mini svg{width:22px;height:22px;display:block}
 .mf .mini small{align-self:center;font-size:10.5px;font-weight:600;letter-spacing:.14em;color:var(--sage)}
-.crawl{position:relative;flex:1;align-self:stretch;margin-left:10px;overflow:hidden;perspective:300px;perspective-origin:50% 100%;transform:translateZ(24px);-webkit-mask-image:linear-gradient(transparent 0,#000 30%,#000 88%,transparent 100%);mask-image:linear-gradient(transparent 0,#000 30%,#000 88%,transparent 100%)}
-.crawl-in{position:absolute;left:0;right:0;top:0;padding:0 4px;text-align:center;animation:crawl 52s linear infinite}
-.cw{position:absolute;inset:0;transform-origin:50% 100%;transform:rotateX(40deg)}
+.crawl{position:relative;flex:1;align-self:stretch;margin-left:10px;overflow:hidden;perspective:125px;perspective-origin:50% 100%;transform:translateZ(24px);-webkit-mask-image:linear-gradient(transparent 0,#000 30%,#000 88%,transparent 100%);mask-image:linear-gradient(transparent 0,#000 30%,#000 88%,transparent 100%)}
+.crawl-in{position:absolute;left:0;right:0;top:0;padding:0 4px;text-align:center;animation:crawl 68s linear infinite}
+.cw{position:absolute;inset:0;transform-origin:50% 100%;transform:rotateX(32deg)}
 .mf:not([data-s="0"]) .crawl-in{animation-play-state:paused}
 @keyframes crawl{from{transform:translateY(160px)}to{transform:translateY(-100%)}}
-.crawl-in p{font-size:13px;line-height:1.55;color:rgba(247,243,214,.84)}
-.crawl-in b{color:var(--cream);font-weight:600}
+.crawl-in p{font-size:14px;line-height:1.5;font-weight:600;color:rgba(244,236,163,.95)}
+.crawl-in .ep{font-size:10px;letter-spacing:.34em;font-weight:600;color:var(--sage);margin:0}
+.crawl-in .ttl{margin:3px 0 4px;font-size:27px;letter-spacing:.1em;font-weight:700;line-height:1.1;color:var(--cream)}
+.crawl-in .tsub{margin:0 0 18px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--cream)}
+.crawl-in b{color:#fff;font-weight:700}
 .dsb .ic2{width:20px;height:20px;border-radius:50%;background:#16294a;display:grid;place-items:center}
 .dsb .ic2 svg{width:12px;height:12px;fill:none;stroke:var(--cream);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .dsb.on .ic2{background:var(--navy)}
@@ -221,9 +224,8 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
         <div class="pbody">
           <div class="left">
             <div class="art"><div class="cov"><img src="img/podcast.jpg" alt="Loagen, Bir düşünce arşivi"></div></div>
-            <div class="mini"><a href="https://open.spotify.com/search/Loagen" aria-label="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#08140c"/><g fill="none" stroke="#1DB954" stroke-linecap="round"><path d="M5.8 9.3C9.9 8 14.6 8.3 18.4 10.5" stroke-width="2"/><path d="M6.5 12.6C9.6 11.7 13.3 12 16.4 13.7" stroke-width="1.7"/><path d="M7.3 15.7C9.8 15 12.7 15.2 15.1 16.5" stroke-width="1.4"/></g></svg></a><a href="https://podcasts.apple.com/search?term=Loagen" aria-label="Apple Podcasts"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2a0f45"/><g fill="none" stroke="#ecc2ff" stroke-linecap="round" stroke-width="1.6"><path d="M7.2 14.4a5.7 5.7 0 1 1 9.6 0"/><path d="M9.5 12.7a3 3 0 1 1 5 0"/></g><circle cx="12" cy="10.3" r="1.5" fill="#ecc2ff"/><path d="M12 12.7c1.2 0 1.6.8 1.5 2l-.4 3.1a1.1 1.1 0 0 1-2.2 0l-.4-3.1c-.1-1.2.3-2 1.5-2Z" fill="#ecc2ff"/></svg></a></div>
           </div>
-          <div class="crawl" aria-label="Loagen podcast açıklaması"><div class="cw"><div class="crawl-in"><p>Bedeniniz <b>yıldız tozundan</b> yapıldı, korkularınız <b>savanada</b> şekillendi. Gözünüze ulaşan ışık <b>sekiz dakikalık</b>, içinizdeki ses <b>yüz bin yıllık</b>. Evren <b>13,8 milyar yıl</b> bekledi, bu cümleyi okuyabilen bir madde ortaya çıkana kadar. Bilimle, felsefeyle, psikolojiyle ve sanatla teleskobu o maddeye çeviriyoruz: <b>insanoğluna.</b></p></div></div></div>
+          <div class="crawl" aria-label="Loagen podcast açıklaması"><div class="cw"><div class="crawl-in"><p class="ep">PODCAST</p><p class="ttl">LOAGEN</p><p class="tsub">Bir düşünce arşivi</p><p>Bedeniniz <b>yıldız tozundan</b> yapıldı, korkularınız <b>savanada</b> şekillendi. Gözünüze ulaşan ışık <b>sekiz dakikalık</b>, içinizdeki ses <b>yüz bin yıllık</b>. Evren <b>13,8 milyar yıl</b> bekledi, bu cümleyi okuyabilen bir madde ortaya çıkana kadar. Bilimle, felsefeyle, psikolojiyle ve sanatla teleskobu o maddeye çeviriyoruz: <b>insanoğluna.</b></p></div></div></div>
         </div>
       </div>
     </div>
