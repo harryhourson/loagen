@@ -98,7 +98,9 @@ section{padding-top:34px}
 .bc:hover{border-color:var(--sage);background:rgba(244,236,163,.1)}
 .bc b{display:block;font-size:15px}.bc span{font-size:12.5px;color:rgba(247,243,214,.68)}
 .bc i{margin-left:auto;font-style:normal;opacity:.6}
-.prods{position:relative;height:auto;aspect-ratio:1/.72;margin-top:30px;perspective:1100px}
+.ps{container-type:inline-size}
+.pds{padding-top:56px}
+.prods{position:relative;height:calc(53cqw + 67px);margin-top:30px;perspective:1100px}
 .prods:before{content:"";position:absolute;inset:-30px -20px;background:radial-gradient(55% 55% at 50% 50%,rgba(244,236,163,.2),transparent 72%);pointer-events:none;animation:halo 6s ease-in-out infinite}
 @keyframes halo{50%{opacity:.6;scale:1.06}}
 .prod{position:absolute;width:44%;text-decoration:none;color:var(--ink);opacity:0}
@@ -106,7 +108,7 @@ section{padding-top:34px}
 .rv.on .prod:nth-child(2){animation-delay:.35s}
 @keyframes pin{from{opacity:0;rotate:0 1 0 -42deg;translate:-40px 30px;scale:.8}to{opacity:1;rotate:0 1 0 0deg;translate:0 0;scale:1}}
 .prod:nth-child(1){left:6%;top:0;z-index:2}
-.prod:nth-child(2){right:6%;top:24.5%}
+.prod:nth-child(2){right:6%;top:17cqw}
 .prod:nth-child(2){--b:-2.7s}
 @keyframes bob{50%{translate:0 -7px}}
 .pc{position:relative;animation:bob 5.5s ease-in-out infinite;animation-delay:var(--b,0s);transition:transform .3s ease-out;transform-style:preserve-3d;transform:rotateY(calc(var(--sr,0deg) + var(--px,0deg))) rotateX(var(--py,0deg)) rotateZ(var(--rz,0deg))}
@@ -140,13 +142,13 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
     <h1 class="tag" id="tag">Daha fazlası değil, <em>doğru form.</em></h1>
     <div class="down" aria-hidden="true"></div>
   </section>
-  <section class="rv">
+  <section class="rv ps">
     <div class="prods">
       <a class="prod" href="https://www.loagen.com.tr/products/magnativ-magnezyum?utm_source=link&utm_medium=bio&utm_campaign=magnativ"><div class="pc" style="--m:url(img/magnativ-kesim.png)"><img src="img/magnativ-kesim.png" alt="Magnativ™"></div><div class="lb"><b>Magnativ<sup>™</sup></b><span>Magnezyum</span></div></a>
       <a class="prod" href="https://www.loagen.com.tr/products/folinativ-folik-asit?utm_source=link&utm_medium=bio&utm_campaign=folinativ"><div class="pc" style="--m:url(img/folinativ-kesim.png)"><img src="img/folinativ-kesim.png" alt="Folinativ™"></div><div class="lb"><b>Folinativ<sup>™</sup></b><span>Folik asit</span></div></a>
     </div>
   </section>
-  <section class="rv">
+  <section class="rv pds">
     <a class="pod t3" href="https://open.spotify.com/search/Loagen" aria-label="Loagen Podcast, Spotify'da dinle" style="--cv:url(img/podcast.jpg)">
       <div class="pbg"></div>
       <div class="pbody">
