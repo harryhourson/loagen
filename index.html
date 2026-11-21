@@ -76,15 +76,25 @@ section{padding-top:34px}
 .bc:hover{transform:translateX(4px);border-color:var(--sage)}
 .bc b{display:block;font-size:15px}.bc span{font-size:12.5px;color:rgba(247,243,214,.68)}
 .bc i{margin-left:auto;font-style:normal;opacity:.6}
-.prods{position:relative;height:250px;margin-top:4px}
-.prods:before{content:"";position:absolute;inset:-30px -20px;background:radial-gradient(55% 55% at 50% 50%,rgba(244,236,163,.2),transparent 72%);pointer-events:none}
-.prod{position:absolute;width:44%;perspective:900px;text-decoration:none;color:var(--ink);animation:bob 5.5s ease-in-out infinite}
+.prods{position:relative;height:288px;margin-top:4px;perspective:1100px}
+.prods:before{content:"";position:absolute;inset:-30px -20px;background:radial-gradient(55% 55% at 50% 50%,rgba(244,236,163,.2),transparent 72%);pointer-events:none;animation:halo 6s ease-in-out infinite}
+@keyframes halo{50%{opacity:.6;scale:1.06}}
+.prod{position:absolute;width:44%;text-decoration:none;color:var(--ink);opacity:0}
+.rv.on .prod{animation:pin 1.2s var(--ease) both}
+.rv.on .prod:nth-child(2){animation-delay:.35s}
+@keyframes pin{from{opacity:0;rotate:0 1 0 -42deg;translate:-40px 30px;scale:.8}to{opacity:1;rotate:0 1 0 0deg;translate:0 0;scale:1}}
 .prod:nth-child(1){left:6%;top:0;z-index:2}
-.prod:nth-child(2){right:6%;top:58px;animation-delay:-2.7s}
+.prod:nth-child(2){right:6%;top:58px}
+.prod:nth-child(2){--b:-2.7s}
 @keyframes bob{50%{translate:0 -7px}}
-.pc{position:relative;transition:transform .3s ease-out;transform-style:preserve-3d;transform:rotateY(calc(var(--sr,0deg) + var(--px,0deg))) rotateX(var(--py,0deg)) rotateZ(var(--rz,0deg))}
+.pc{position:relative;animation:bob 5.5s ease-in-out infinite;animation-delay:var(--b,0s);transition:transform .3s ease-out;transform-style:preserve-3d;transform:rotateY(calc(var(--sr,0deg) + var(--px,0deg))) rotateX(var(--py,0deg)) rotateZ(var(--rz,0deg))}
 .prod:nth-child(1) .pc{--rz:-4deg}.prod:nth-child(2) .pc{--rz:4deg}
 .pc img{display:block;width:100%;height:auto;filter:drop-shadow(0 12px 12px rgba(0,0,0,.45));transform:translateZ(40px)}
+.pc:before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.75) 50%,transparent 60%);background-size:260% 100%;background-position:130% 0;-webkit-mask:var(--m) center/100% 100% no-repeat;mask:var(--m) center/100% 100% no-repeat;transform:translateZ(41px);animation:gloss 7s ease-in-out infinite;animation-delay:calc(var(--b,0s) - 1.5s)}
+@keyframes gloss{0%,55%{background-position:130% 0}85%,100%{background-position:-30% 0}}
+.sp{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--cream);box-shadow:0 0 8px 2px rgba(244,236,163,.7);opacity:0;animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:0;scale:.4}50%{opacity:1;scale:1}}
+sup{font-size:.5em;vertical-align:super;margin-left:1px;font-weight:600;opacity:.85}
 .pc:after{content:"";position:absolute;left:12%;right:12%;bottom:-14px;height:18px;border-radius:50%;background:rgba(0,0,0,.35);filter:blur(10px);transform:translateZ(-20px)}
 .lb{margin-top:14px;text-align:center}
 .prod:nth-child(1) .lb{text-align:left;padding-left:8%}
@@ -111,8 +121,8 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
   </section>
   <section class="rv">
     <div class="prods">
-      <a class="prod" href="https://www.loagen.com.tr/products/magnativ-magnezyum?utm_source=link&utm_medium=bio&utm_campaign=magnativ"><div class="pc"><img src="img/magnativ-kesim.png" alt="Magnativ"></div><div class="lb"><b>Magnativ</b><span>Magnezyum</span></div></a>
-      <a class="prod" href="https://www.loagen.com.tr/products/folinativ-folik-asit?utm_source=link&utm_medium=bio&utm_campaign=folinativ"><div class="pc"><img src="img/folinativ-kesim.png" alt="Folinativ"></div><div class="lb"><b>Folinativ</b><span>Folik asit</span></div></a>
+      <a class="prod" href="https://www.loagen.com.tr/products/magnativ-magnezyum?utm_source=link&utm_medium=bio&utm_campaign=magnativ"><div class="pc" style="--m:url(img/magnativ-kesim.png)"><img src="img/magnativ-kesim.png" alt="Magnativ™"></div><div class="lb"><b>Magnativ<sup>™</sup></b><span>Magnezyum</span></div></a>
+      <a class="prod" href="https://www.loagen.com.tr/products/folinativ-folik-asit?utm_source=link&utm_medium=bio&utm_campaign=folinativ"><div class="pc" style="--m:url(img/folinativ-kesim.png)"><img src="img/folinativ-kesim.png" alt="Folinativ™"></div><div class="lb"><b>Folinativ<sup>™</sup></b><span>Folik asit</span></div></a>
     </div>
   </section>
 
@@ -181,6 +191,8 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
       c.style.setProperty('--px',(x*22)+'deg');c.style.setProperty('--py',(-y*18)+'deg')});
     a.addEventListener('pointerleave',function(){c.style.setProperty('--px','0deg');c.style.setProperty('--py','0deg')});
   });
+  var pw=document.querySelector('.prods');
+  if(pw&&!RM)[[8,18],[30,6],[52,14],[70,4],[90,22],[14,52],[44,40],[62,60],[84,48],[96,70],[22,78]].forEach(function(q,i){var e=document.createElement('i');e.className='sp';e.style.left=q[0]+'%';e.style.top=q[1]+'%';e.style.animationDelay=(i*0.55)+'s';e.style.animationDuration=(3+i%3)+'s';pw.appendChild(e)});
   if(!RM){var pt=0;function ps(){pt=0;document.querySelectorAll('.prod').forEach(function(a,i){var r=a.getBoundingClientRect(),o=((r.top+r.height/2)/innerHeight-.5);a.firstElementChild.style.setProperty('--sr',((i?-1:1)*(-14)*o+(i?6:-6)).toFixed(1)+'deg')})}
     addEventListener('scroll',function(){if(!pt)pt=requestAnimationFrame(ps)},{passive:true});ps()}
 
