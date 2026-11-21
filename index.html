@@ -15,6 +15,7 @@
 <style>
 :root{--navy:#23406A;--deep:#1b3358;--sage:#ACB187;--cream:#F4ECA3;--ink:#F7F3D6;--ease:cubic-bezier(.2,.8,.2,1)}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+button,a,input,select,textarea{font-family:inherit}
 html{background:var(--deep);scroll-behavior:smooth}
 body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:var(--deep);min-height:100vh;overflow-x:hidden}
 #sky{position:fixed;inset:0;width:100%;height:100%;z-index:0}
@@ -22,7 +23,7 @@ main{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:0 20px ca
 section{padding-top:34px}
 .hero{min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 0 0}
 .logo{width:104px;height:104px;border-radius:50%;background:var(--ink);display:grid;place-items:center;margin-bottom:22px;box-shadow:0 0 0 7px rgba(172,177,135,.22),0 0 60px rgba(244,236,163,.28);opacity:0;transform:scale(.7);animation:pop 1.1s .1s var(--ease) forwards}
-.logo img{width:60%;height:auto;display:block}
+.logo img{width:74%;height:auto;display:block}
 @keyframes pop{to{opacity:1;transform:none}}
 .brand{font-size:15px;font-weight:700;letter-spacing:.5em;padding-left:.5em}
 .brand span,.tag span{display:inline-block;opacity:0;filter:blur(12px);transform:translateY(8px);animation:in .9s var(--ease) forwards}
@@ -101,7 +102,16 @@ section{padding-top:34px}
 .bc b{display:block;font-size:15px}.bc span{font-size:12.5px;color:rgba(247,243,214,.68)}
 .bc i{margin-left:auto;font-style:normal;opacity:.6}
 .ps{container-type:inline-size}
-.pds{padding-top:28px}
+.pds{padding-top:14px}
+.shopsw{position:relative;display:flex;width:max-content;margin:18px auto 0;padding:4px;border-radius:26px;background:rgba(244,236,163,.07);border:1px solid rgba(172,177,135,.38);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.shopsw .thumb{position:absolute;top:4px;bottom:4px;left:0;width:var(--tw,50%);transform:translateX(var(--tx,4px));border-radius:22px;background:var(--cream);box-shadow:0 6px 16px rgba(0,0,0,.3);transition:transform .55s var(--ease),width .55s var(--ease)}
+.ssb{position:relative;z-index:1;display:flex;align-items:center;gap:7px;padding:9px 18px;border:0;background:none;color:var(--ink);font-size:12.5px;font-weight:600;letter-spacing:.01em;border-radius:22px;cursor:pointer;transition:color .4s}
+.ssb.on{color:var(--navy)}
+.tyd{width:7px;height:7px;border-radius:50%;background:#F27A1A;box-shadow:0 0 0 0 rgba(242,122,26,.6)}
+.ssb.on .tyd{animation:typing 2s infinite}
+@keyframes typing{70%{box-shadow:0 0 0 7px rgba(242,122,26,0)}100%{box-shadow:0 0 0 0 rgba(242,122,26,0)}}
+.prod.sw .pc{animation:bump .6s var(--ease)}
+@keyframes bump{40%{scale:1.06}}
 .deck{display:grid;padding:28px 24px 0 0;perspective:1200px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .deck .pod{grid-area:1/1;--o:1;z-index:calc(3 - var(--o)*2);cursor:grab;touch-action:pan-y;transform:perspective(1000px) translate3d(calc(var(--o)*24px + var(--dx,0px)),calc(var(--o)*-26px),0px) rotateX(calc(var(--hy,0deg) + var(--sx,0deg))) rotateY(calc(var(--hx,0deg) + var(--dr,0deg))) scale(calc(1 - var(--o)*.05));filter:brightness(calc(1 - var(--o)*.3)) saturate(calc(1 - var(--o)*.15));transition:transform .65s var(--ease),filter .65s var(--ease),box-shadow .65s,border-color .3s}
 .deck .pod[data-s="0"]{--o:0}
@@ -156,16 +166,18 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
 <canvas id="sky" aria-hidden="true"></canvas>
 <main>
   <section class="hero">
-    <div class="logo"><img src="img/logo.png" alt="LOAGEN"></div>
+    <div class="logo"><img src="img/logo-merkez.png" alt="LOAGEN"></div>
     <div class="brand" id="brand">LOAGEN</div>
     <h1 class="tag" id="tag">Daha fazlası değil, <em>doğru form.</em></h1>
     <div class="down" aria-hidden="true"></div>
   </section>
   <section class="rv ps">
     <div class="prods">
-      <a class="prod" href="https://www.loagen.com.tr/products/magnativ-magnezyum?utm_source=link&utm_medium=bio&utm_campaign=magnativ"><div class="pc" style="--m:url(img/magnativ-kesim.png)"><img src="img/magnativ-kesim.png" alt="Magnativ™"></div><div class="lb"><b>Magnativ<sup>™</sup></b><span>Magnezyum</span></div></a>
-      <a class="prod" href="https://www.loagen.com.tr/products/folinativ-folik-asit?utm_source=link&utm_medium=bio&utm_campaign=folinativ"><div class="pc" style="--m:url(img/folinativ-kesim.png)"><img src="img/folinativ-kesim.png" alt="Folinativ™"></div><div class="lb"><b>Folinativ<sup>™</sup></b><span>Folik asit</span></div></a>
+      <a class="prod" data-site="https://www.loagen.com.tr/products/magnativ-magnezyum?utm_source=link&utm_medium=bio&utm_campaign=magnativ" data-ty="https://ty.gl/iy0losyx2j37b" href="https://www.loagen.com.tr/products/magnativ-magnezyum?utm_source=link&utm_medium=bio&utm_campaign=magnativ"><div class="pc" style="--m:url(img/magnativ-kesim.png)"><img src="img/magnativ-kesim.png" alt="Magnativ™"></div><div class="lb"><b>Magnativ<sup>™</sup></b><span>Magnezyum</span></div></a>
+      <a class="prod" data-site="https://www.loagen.com.tr/products/folinativ-folik-asit?utm_source=link&utm_medium=bio&utm_campaign=folinativ" data-ty="https://ty.gl/0g663m89gvj3a" href="https://www.loagen.com.tr/products/folinativ-folik-asit?utm_source=link&utm_medium=bio&utm_campaign=folinativ"><div class="pc" style="--m:url(img/folinativ-kesim.png)"><img src="img/folinativ-kesim.png" alt="Folinativ™"></div><div class="lb"><b>Folinativ<sup>™</sup></b><span>Folik asit</span></div></a>
     </div>
+  
+    <div class="shopsw" id="shopsw" role="group" aria-label="Nereden almak istersin"><span class="thumb"></span><button type="button" class="ssb on" data-s="site">loagen.com.tr</button><button type="button" class="ssb" data-s="ty"><i class="tyd"></i>Trendyol</button></div>
   </section>
   <section class="rv pds">
     <div class="deck" id="deck">
@@ -230,6 +242,13 @@ a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
     el.addEventListener('pointerleave',function(){el.style.setProperty('--hx','0deg');el.style.setProperty('--hy','0deg')})}
   var t3k=0;function t3s(){t3k=0;document.querySelectorAll('.t3').forEach(function(el){var r=el.getBoundingClientRect(),o=(r.top+r.height/2)/innerHeight-.5;el.style.setProperty('--sx',(o*-7).toFixed(1)+'deg')})}
   if(!RM){addEventListener('scroll',function(){if(!t3k)t3k=requestAnimationFrame(t3s)},{passive:true});document.querySelectorAll('.t3').forEach(tilt3);t3s()}
+  var ssw=document.getElementById('shopsw'),ssbs=ssw.querySelectorAll('.ssb'),thumb=ssw.querySelector('.thumb');
+  function shop(k,save){ssbs.forEach(function(b){var on=b.dataset.s===k;b.classList.toggle('on',on);if(on){ssw.style.setProperty('--tx',b.offsetLeft+'px');ssw.style.setProperty('--tw',b.offsetWidth+'px')}});
+    document.querySelectorAll('.prod').forEach(function(a){a.href=k==='ty'?a.dataset.ty:a.dataset.site;if(k==='ty'){a.target='_blank';a.rel='noopener'}else{a.removeAttribute('target');a.removeAttribute('rel')}if(save){a.classList.remove('sw');void a.offsetWidth;a.classList.add('sw')}});
+    if(save){try{localStorage.setItem('shop',k)}catch(e){}}}
+  ssbs.forEach(function(b){b.addEventListener('click',function(){shop(b.dataset.s,true)})});
+  var st0='site';try{st0=localStorage.getItem('shop')==='ty'?'ty':'site'}catch(e){}
+  shop(st0,false);addEventListener('load',function(){shop(st0,false)});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){shop(document.querySelector('.ssb.on').dataset.s,false)});
   var dk=document.getElementById('deck'),dp=Array.prototype.slice.call(dk.querySelectorAll('.pod')),dsb=document.querySelectorAll('.dsb'),cur=0,dmv=0,dstart=0,dpod=null,nudged=0;
   function dset(n){cur=n;dp.forEach(function(p,i){p.dataset.s=i===cur?'0':'1'});dsb.forEach(function(b,i){b.classList.toggle('on',i===cur);b.setAttribute('aria-selected',i===cur)})}
   dsb.forEach(function(b){b.addEventListener('click',function(){nudged=1;dset(+b.dataset.i)})});
