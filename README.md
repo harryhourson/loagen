@@ -30,11 +30,12 @@ Bu repo sayfanın **tek ve güncel kaynağıdır**. Düzenleme gerekirse buradan
    - Magnativ: site `https://www.loagen.com.tr/products/magnativ-magnezyum?utm_source=link&utm_medium=bio&utm_campaign=magnativ`, Trendyol `https://ty.gl/iy0losyx2j37b`
    - Folinativ: site `https://www.loagen.com.tr/products/folinativ-folik-asit?utm_source=link&utm_medium=bio&utm_campaign=folinativ`, Trendyol `https://ty.gl/0g663m89gvj3a`
    - Ürünün adı **Magnativ** (Magmativ değil).
-3. **Podcast destesi:** üst üste üç kart (Spotify, Apple Podcasts, Hakkında). Hakkında kartında açıklama Star Wars kayan yazısı gibi akar (36 sn, vurgular krem). Altta Spotify / Apple / Hakkında sekmeleri.
+3. **Uygulama kartı** (`section.app`): LOAGEN uygulaması (gebelik, bebek ve çocuk takibi). Google Play linki `https://play.google.com/store/apps/details?id=app.web.loagenapp.twa`. App Store şimdilik "Yakında" (tıklanamaz `div.st.soon`); yayına girince `<a class="st" href="...">` yapılıp üstteki küçük yazı "ŞİMDİ İNDİR" olacak.
+4. **Podcast destesi:** üst üste üç kart (Spotify, Apple Podcasts, Hakkında). Hakkında kartında açıklama Star Wars kayan yazısı gibi akar (36 sn, vurgular krem). Altta Spotify / Apple / Hakkında sekmeleri.
    - Spotify ve Apple linkleri şimdilik arama sayfası (`open.spotify.com/search/Loagen`, `podcasts.apple.com/search?term=Loagen`). **Show yayına girince gerçek linklerle değiştirilecek.**
-4. **Videolar:** coverflow şeridi, kendi kendine kayar; içerik `icerik.json` → `videolar`. Platform kodları: `YT`, `IG`, `TT`.
-5. **Blog kartı:** `icerik.json` → `blog`.
-6. **Sosyal ikonlar:** Instagram, TikTok, YouTube (`@loagenturkiye`).
+5. **Videolar:** coverflow şeridi, kendi kendine kayar; içerik `icerik.json` → `videolar`. Platform kodları: `YT`, `IG`, `TT`.
+6. **Blog kartı:** `icerik.json` → `blog`.
+7. **Sosyal ikonlar:** Instagram, TikTok, YouTube (`@loagenturkiye`).
 
 ## Marka kuralları
 
@@ -52,5 +53,6 @@ Bu repo sayfanın **tek ve güncel kaynağıdır**. Düzenleme gerekirse buradan
 ## Yapılacaklar
 
 - Podcast Spotify/Apple linkleri yayına girince güncellenecek.
+- Uygulamanın App Store linki gelince kart güncellenecek.
 - Kullanıcının istediği, ileride: sayfayı düzenlemek için basit bir kontrol paneli (video/blog/ürün ekle-çıkar, `icerik.json`'u besleyecek).
 - `loagen.com.tr` alan adı 15.12.2026'da bitiyor; otomatik yenileme pasifti. Biterse `bio.` alt alan adı da düşer.
