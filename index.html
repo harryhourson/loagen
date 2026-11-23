@@ -20,7 +20,7 @@ html{background:var(--deep);scroll-behavior:smooth}
 body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:var(--deep);min-height:100vh;overflow-x:hidden}
 #sky{position:fixed;inset:0;width:100%;height:100%;z-index:0}
 main{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:0 20px calc(48px + env(safe-area-inset-bottom))}
-section{padding-top:34px}
+section{padding-top:38px}
 .hero{min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 0 0}
 .logo{width:104px;height:104px;border-radius:50%;background:var(--ink);display:grid;place-items:center;margin-bottom:22px;box-shadow:0 0 0 7px rgba(172,177,135,.22),0 0 60px rgba(244,236,163,.28);opacity:0;transform:scale(.7);animation:pop 1.1s .1s var(--ease) forwards}
 .logo img{width:74%;height:auto;display:block}
@@ -102,7 +102,7 @@ section{padding-top:34px}
 .bc b{display:block;font-size:15px}.bc span{font-size:12.5px;color:rgba(247,243,214,.68)}
 .bc i{margin-left:auto;font-style:normal;opacity:.6}
 .ps{container-type:inline-size}
-.pds{padding-top:14px}
+.pds{padding-top:16px}
 .shopsw{position:relative;display:flex;width:max-content;margin:18px auto 0;padding:4px;border-radius:26px;background:rgba(244,236,163,.07);border:1px solid rgba(172,177,135,.38);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 10px 26px rgba(0,0,0,.25)}
 .shopsw .thumb{position:absolute;top:4px;bottom:4px;left:0;width:var(--tw,50%);transform:translateX(var(--tx,4px));border-radius:22px;background:var(--cream);box-shadow:0 6px 16px rgba(0,0,0,.3);transition:transform .55s var(--ease),width .55s var(--ease)}
 .ssb{position:relative;z-index:1;display:flex;align-items:center;gap:7px;padding:9px 18px;border:0;background:none;color:var(--ink);font-size:12.5px;font-weight:600;letter-spacing:.01em;border-radius:22px;cursor:pointer;transition:color .4s}
@@ -182,14 +182,14 @@ sup{font-size:.5em;vertical-align:super;margin-left:1px;font-weight:600;opacity:
 .soc svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 footer{margin-top:26px;text-align:center;font-size:11.5px;color:rgba(172,177,135,.8);letter-spacing:.1em}
 a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
-.app{padding-top:30px}
+.app{padding-top:34px}
 @property --tx{syntax:'<angle>';inherits:false;initial-value:0deg}
 @property --ty{syntax:'<angle>';inherits:false;initial-value:0deg}
 @property --p{syntax:'<percentage>';inherits:false;initial-value:0%}
-.ac{position:relative;padding:0 18px 18px;border-radius:26px;background:linear-gradient(160deg,rgba(244,236,163,.12),rgba(244,236,163,.03) 60%);border:1px solid rgba(172,177,135,.34);box-shadow:0 22px 44px rgba(0,0,0,.35);transform-style:preserve-3d;touch-action:pan-y;transform:perspective(1000px) rotateX(var(--ty)) rotateY(var(--tx));transition:transform .6s var(--ease)}
+.ac{position:relative;margin:0 14px;padding:0 16px 18px;border-radius:26px;background:linear-gradient(160deg,rgba(244,236,163,.12),rgba(244,236,163,.03) 60%);border:1px solid rgba(172,177,135,.34);box-shadow:0 22px 44px rgba(0,0,0,.35);transform-style:preserve-3d;touch-action:pan-y;transform:perspective(1000px) rotateX(var(--ty)) rotateY(var(--tx));transition:transform .6s var(--ease)}
 .ac.live{transition:transform .08s linear}
 .rv.on .ac:not(.live){animation:asw 10s linear infinite}
-@keyframes asw{0%,100%{--tx:0deg;--ty:0deg}25%{--tx:-6deg;--ty:2deg}75%{--tx:6deg;--ty:-2deg}}
+@keyframes asw{0%,100%{--tx:0deg;--ty:0deg}25%{--tx:-4deg;--ty:2deg}75%{--tx:4deg;--ty:-2deg}}
 .ag{position:absolute;inset:0;border-radius:26px;overflow:hidden;pointer-events:none}
 .ag:before{content:"";position:absolute;inset:0;background:radial-gradient(220px 220px at var(--gx,50%) var(--gy,22%),rgba(244,236,163,.22),transparent 70%)}
 .stage{position:relative;height:232px;transform-style:preserve-3d;transform:translateZ(50px)}
