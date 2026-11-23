@@ -183,17 +183,53 @@ sup{font-size:.5em;vertical-align:super;margin-left:1px;font-weight:600;opacity:
 footer{margin-top:26px;text-align:center;font-size:11.5px;color:rgba(172,177,135,.8);letter-spacing:.1em}
 a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
 .app{padding-top:30px}
-.ac{position:relative;overflow:hidden;padding:18px;border-radius:24px;background:rgba(244,236,163,.06);border:1px solid rgba(172,177,135,.32);box-shadow:0 16px 36px rgba(0,0,0,.28)}
-.ac:before{content:"";position:absolute;right:-60px;top:-70px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(244,236,163,.16),transparent 70%);pointer-events:none}
-.ah{position:relative;display:flex;gap:14px;align-items:center}
-.ai{flex:none;width:64px;height:64px;border-radius:16px;background:var(--ink);display:grid;place-items:center;box-shadow:0 10px 22px rgba(0,0,0,.35),0 0 0 4px rgba(172,177,135,.18)}
-.ai img{width:74%;height:auto;display:block}
+@property --tx{syntax:'<angle>';inherits:false;initial-value:0deg}
+@property --ty{syntax:'<angle>';inherits:false;initial-value:0deg}
+@property --p{syntax:'<percentage>';inherits:false;initial-value:0%}
+.ac{position:relative;padding:20px 18px 18px;border-radius:26px;background:linear-gradient(150deg,rgba(244,236,163,.11),rgba(244,236,163,.03));border:1px solid rgba(172,177,135,.34);box-shadow:0 22px 44px rgba(0,0,0,.35);transform-style:preserve-3d;touch-action:pan-y;transform:perspective(900px) rotateX(var(--ty)) rotateY(var(--tx));transition:transform .6s var(--ease)}
+.ac.live{transition:transform .08s linear}
+.rv.on .ac:not(.live){animation:asw 10s linear infinite}
+@keyframes asw{0%,100%{--tx:0deg;--ty:0deg}25%{--tx:-7deg;--ty:3deg}75%{--tx:7deg;--ty:-2deg}}
+.ag{position:absolute;inset:0;border-radius:26px;overflow:hidden;pointer-events:none}
+.ag:before{content:"";position:absolute;inset:0;background:radial-gradient(200px 200px at var(--gx,75%) var(--gy,25%),rgba(244,236,163,.2),transparent 70%);transition:background .3s}
+.ac-in{position:relative;display:flex;align-items:center;gap:6px;transform-style:preserve-3d}
+.at{flex:1;min-width:0;transform:translateZ(30px)}
 .at small{display:flex;align-items:center;gap:7px;font-size:10.5px;font-weight:600;letter-spacing:.22em;color:var(--cream)}
 .at small:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cream);box-shadow:0 0 0 0 rgba(244,236,163,.7);animation:ping3 2s infinite}
 @keyframes ping3{70%{box-shadow:0 0 0 8px rgba(244,236,163,0)}100%{box-shadow:0 0 0 0 rgba(244,236,163,0)}}
-.at b{display:block;margin-top:5px;font-size:19px}
-.at span{display:block;margin-top:3px;font-size:12.5px;line-height:1.4;color:rgba(247,243,214,.78)}
-.ab{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.at b{display:block;margin-top:9px;font-size:21px;line-height:1.15}
+.at b em{font-style:normal;color:var(--cream)}
+.at span{display:block;margin-top:9px;font-size:12.5px;line-height:1.45;color:rgba(247,243,214,.78)}
+.ph-wrap{position:relative;flex:none;width:124px;height:222px;transform-style:preserve-3d;transform:translateZ(54px)}
+.ph{position:absolute;left:12px;top:4px;width:104px;height:206px;border-radius:22px;background:#0b1526;padding:5px;box-shadow:0 18px 30px rgba(0,0,0,.5),inset 0 0 0 1px rgba(244,236,163,.28);rotate:z 4deg;animation:phf 6s ease-in-out infinite}
+@keyframes phf{50%{translate:0 -6px}}
+.scr{position:relative;height:100%;border-radius:17px;overflow:hidden;background:linear-gradient(170deg,#2d4f86,#1b3358);padding:18px 8px 8px;display:flex;flex-direction:column;gap:6px;color:var(--ink)}
+.scr:before{content:"";position:absolute;top:6px;left:50%;width:30px;height:6px;margin-left:-15px;border-radius:4px;background:#0b1526}
+.scr .lg{position:absolute;top:5px;left:9px;width:12px;height:12px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.scr .lg img{width:78%;display:block}
+.ring{position:relative;width:60px;height:60px;margin:4px auto 2px;border-radius:50%;background:conic-gradient(var(--cream) 0 var(--p),rgba(244,236,163,.14) 0);display:grid;place-items:center}
+.ring:before{content:"";position:absolute;inset:6px;border-radius:50%;background:#22406f}
+.ring div{position:relative;text-align:center;line-height:1}
+.ring b{display:block;font-size:18px}
+.ring small{display:block;margin-top:2px;font-size:7.5px;font-weight:600;letter-spacing:.12em;color:var(--sage)}
+.rv.on .ring{animation:fill 1.8s .7s var(--ease) forwards}
+@keyframes fill{to{--p:60%}}
+.row{display:flex;align-items:center;gap:5px;padding:6px 7px;border-radius:9px;background:rgba(244,236,163,.1);font-size:8px;font-weight:600;white-space:nowrap}
+.row em{flex:none;width:6px;height:6px;border-radius:50%;background:var(--cream)}
+.row em.s{background:var(--sage)}
+.row time{margin-left:auto;opacity:.7}
+.bars{display:flex;align-items:flex-end;gap:4px;height:24px;margin-top:auto;padding:0 3px}
+.bars i{flex:1;border-radius:3px;background:rgba(172,177,135,.55);height:0;transition:height .9s var(--ease)}
+.rv.on .bars i{height:var(--h)}
+.rv.on .bars i:nth-child(5){background:var(--cream)}
+.gl{position:absolute;inset:5px;border-radius:17px;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.16) 48%,transparent 60%);background-size:250% 100%;background-position:130% 0;animation:gloss 7s ease-in-out infinite;pointer-events:none}
+.chip{position:absolute;display:flex;align-items:center;gap:5px;padding:6px 9px;border-radius:12px;background:var(--cream);color:var(--navy);font-size:10px;font-weight:700;white-space:nowrap;box-shadow:0 10px 20px rgba(0,0,0,.35);animation:phf 5s ease-in-out infinite}
+.chip svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.c1{right:-4px;top:30px;transform:translateZ(42px);animation-delay:-1.5s}
+.c2{right:-4px;bottom:22px;transform:translateZ(64px);background:var(--sage);color:var(--deep);animation-delay:-3s}
+.shd{position:absolute;left:22px;right:8px;bottom:-10px;height:14px;border-radius:50%;background:rgba(0,0,0,.45);filter:blur(9px);transform:translateZ(-30px)}
+@media (prefers-reduced-motion:reduce){.ring{--p:60%}.bars i{height:var(--h)}}
+.ab{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;transform:translateZ(26px)}
 .st{position:relative;overflow:hidden;display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:14px;text-decoration:none;color:var(--ink);background:#0b1526;border:1px solid rgba(244,236,163,.24);transition:border-color .3s,transform .3s var(--ease)}
 .st svg{width:22px;height:22px;flex:none;display:block}
 .st small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.08em;opacity:.72}
@@ -222,10 +258,25 @@ a.st:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;ba
     <div class="shopsw" id="shopsw" role="group" aria-label="Nereden almak istersin"><span class="thumb"></span><button type="button" class="ssb on" data-s="site">loagen.com.tr</button><button type="button" class="ssb" data-s="ty">Trendyol</button></div>
   </section>
   <section class="rv app">
-    <div class="ac">
-      <div class="ah">
-        <div class="ai"><img src="img/logo-merkez.png" alt="LOAGEN uygulaması"></div>
-        <div class="at"><small>UYGULAMA</small><b>LOAGEN</b><span>Gebelik, bebek ve çocuk takibi; hatırlatıcılar ve rehber bir arada.</span></div>
+    <div class="ac" id="appc">
+      <div class="ag"></div>
+      <div class="ac-in">
+        <div class="at"><small>UYGULAMA</small><b>Gebelik ve <em>çocuk takibi</em></b><span>Döngü, hatırlatıcılar ve rehber, hepsi cebinde.</span></div>
+        <div class="ph-wrap" aria-hidden="true">
+          <div class="shd"></div>
+          <div class="ph">
+            <div class="scr">
+              <span class="lg"><img src="img/logo-merkez.png" alt=""></span>
+              <div class="ring"><div><b>24</b><small>HAFTA</small></div></div>
+              <div class="row"><em></em><span>Hatırlatıcı</span><time>09:00</time></div>
+              <div class="row"><em class="s"></em><span>Haftanın rehberi</span></div>
+              <div class="bars"><i style="--h:35%"></i><i style="--h:55%"></i><i style="--h:45%"></i><i style="--h:70%"></i><i style="--h:90%"></i></div>
+            </div>
+            <div class="gl"></div>
+          </div>
+          <div class="chip c1"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15Z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>Vitamin vakti</div>
+          <div class="chip c2"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>Bebek ~600 g</div>
+        </div>
       </div>
       <div class="ab">
         <a class="st gp" href="https://play.google.com/store/apps/details?id=app.web.loagenapp.twa" target="_blank" rel="noopener" aria-label="LOAGEN uygulamasını Google Play'den indir"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M3.6 2.2C3.2 2.5 3 3 3 3.6v16.8c0 .6.2 1.1.6 1.4L13.4 12z"/><path fill="#34A853" d="M3.6 2.2 13.4 12l3.2-3.2L5.2 2.3c-.6-.3-1.2-.4-1.6-.1z"/><path fill="#EA4335" d="M3.6 21.8c.4.3 1 .2 1.6-.1l11.4-6.5L13.4 12z"/><path fill="#FBBC04" d="M16.6 8.8 13.4 12l3.2 3.2 3.6-2.1c1-.6 1-1.6 0-2.2z"/></svg><span><small>ŞİMDİ İNDİR</small><b>Google Play</b></span></a>
@@ -398,6 +449,18 @@ a.st:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;ba
     cx.globalAlpha=1;
     if(!RM)requestAnimationFrame(draw)}
   requestAnimationFrame(draw);
+})();
+</script>
+<script>
+(function(){
+  var ac=document.getElementById('appc');if(!ac||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var t=null;
+  function set(e){var r=ac.getBoundingClientRect(),x=Math.max(-.5,Math.min(.5,(e.clientX-r.left)/r.width-.5)),y=Math.max(-.5,Math.min(.5,(e.clientY-r.top)/r.height-.5));
+    ac.classList.add('live');ac.style.setProperty('--tx',(x*22).toFixed(1)+'deg');ac.style.setProperty('--ty',(-y*16).toFixed(1)+'deg');ac.style.setProperty('--gx',((x+.5)*100).toFixed(0)+'%');ac.style.setProperty('--gy',((y+.5)*100).toFixed(0)+'%')}
+  function off(){ac.style.setProperty('--tx','0deg');ac.style.setProperty('--ty','0deg');ac.style.removeProperty('--gx');ac.style.removeProperty('--gy');clearTimeout(t);t=setTimeout(function(){ac.classList.remove('live')},650)}
+  ac.addEventListener('pointermove',function(e){if(e.pointerType==='mouse'||e.buttons||e.pointerType==='touch'){clearTimeout(t);set(e)}});
+  ac.addEventListener('pointerdown',function(e){clearTimeout(t);set(e)});
+  ['pointerleave','pointerup','pointercancel'].forEach(function(n){ac.addEventListener(n,off)});
 })();
 </script>
 </body>
